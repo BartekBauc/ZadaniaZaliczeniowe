@@ -4,15 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HomePage2 {
+public class HomePage {
     private WebDriver driver;
 
-    public HomePage2(WebDriver driver) {
+    public HomePage(WebDriver driver) {
 
         this.driver = driver;
     }
 
-    public HomePage2 openPage() {
+    public HomePage openPage() {
         driver.get("https://mystore-testlab.coderslab.pl/index.php");
         return this;
     }

@@ -6,8 +6,7 @@ Feature: Zadanie1
     When kliknie w SignIn
     And zaloguje sie
     And doda adres <alias> <address> <city> <zipcode> <country> <phone>
-    And sprawdzi czy adres się zgadza
-    Then Adres bedzie dodany
+    Then adres jest poprawnie dodany
     Examples:
       | alias | address         | city   | zipcode | country        | phone     |
       | UserUser  | BakerStreet221B | London | NW16XE  | U | 123456789 |
