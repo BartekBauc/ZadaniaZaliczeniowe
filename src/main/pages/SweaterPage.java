@@ -14,6 +14,7 @@ public class SweaterPage {
     public SweaterPage(WebDriver driver) {
         this.driver = driver;
     }
+
     public String discountVerification() {
         return driver.findElement(By.className("discount-percentage")).getText();
     }

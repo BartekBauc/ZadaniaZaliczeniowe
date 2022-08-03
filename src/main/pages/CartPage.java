@@ -10,6 +10,7 @@ public class CartPage {
     public CartPage(WebDriver driver) {
         this.driver = driver;
     }
+
     public OrderPage goToOrder() {
         WebElement proceedToCheckoutButton = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div[1]/div[2]/div/a"));
         proceedToCheckoutButton.click();

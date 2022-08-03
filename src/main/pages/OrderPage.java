@@ -10,6 +10,7 @@ public class OrderPage {
     public OrderPage(WebDriver driver) {
         this.driver = driver;
     }
+
     public OrderConfirmationPage fillOrderform() {
         WebElement confirmAddressButton = driver.findElement(By.name("confirm-addresses"));
         confirmAddressButton.click();

@@ -1,25 +1,15 @@
 package zadanie_2;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.*;
 
 public class Zadanie_2 {
-
     private WebDriver driver;
-//    private ResultsPage resultsPage;
-//    private SweaterPage sweaterPage;
-//    private CartPage cartPage;
-//    private OrderPage orderPage;
-//    private HomePage homePage;
-//    private LoginPage loginPage;
-//    private MyAccountPage myAccountPage;
-//    private AddressesPage addressesPage;
-//    private NewAddressPage newAddressPage;
 
     @BeforeEach
     public void setUp() {
@@ -30,7 +20,7 @@ public class Zadanie_2 {
     }
 
     @Test
-    public void loginAndAddNewAddress() {
+    public void loginAndOrder() {
         HomePage homePage = new HomePage(driver);
         LoginPage loginPage = homePage.clickSignInButton();                          //kliknięcie SignIn
         MyAccountPage myAccountPage = loginPage.login();                             //zalogowanie
@@ -39,14 +29,16 @@ public class Zadanie_2 {
         Assertions.assertThat(sweaterPage.discountVerification()).contains("20%");   //sprawdza rabat
         CartPage cartPage = sweaterPage.addSweaterToCart("M", "5");      //dodaje sweter o zadanych parametrach do koszyka
         OrderPage orderPage = cartPage.goToOrder();                                  //potwierdza zawartość koszyka i przechodzi do zamówienia
-        OrderConfirmationPage orderConfirmationPage = orderPage.fillOrderform();
-
-
+        OrderConfirmationPage orderConfirmationPage = orderPage.fillOrderform();     //uzupełnia dane i potwierdza zamówienie
+        try {
+            HomePage homePage2 = orderConfirmationPage.takeScreenShot();             //printscreen
+        } catch (Exception noPrintScreen) {
+            throw new RuntimeException(noPrintScreen);
+        }
     }
 
-//    @AfterEach
-//    public void tearDown(){
-//        driver.quit();
-//    }
-
+    @AfterEach
+    public void tearDown() {
+        driver.quit();
+    }
 }

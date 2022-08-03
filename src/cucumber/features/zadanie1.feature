@@ -8,5 +8,5 @@ Feature: Zadanie1
     And doda adres <alias> <address> <city> <zipcode> <country> <phone>
     Then adres jest poprawnie dodany
     Examples:
-      | alias | address         | city   | zipcode | country        | phone     |
-      | UserUser  | BakerStreet221B | London | NW16XE  | U | 123456789 |
+      | alias    | address         | city   | zipcode | country | phone     |
+      | UserUser | BakerStreet221B | London | NW16XE  | U       | 123456789 |
