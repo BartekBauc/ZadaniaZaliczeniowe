@@ -12,7 +12,7 @@ public class CartPage {
     }
 
     public OrderPage goToOrder() {
-        WebElement proceedToCheckoutButton = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div[1]/div[2]/div/a"));
+        WebElement proceedToCheckoutButton = driver.findElement(By.xpath("//a[@class='btn btn-primary']"));
         proceedToCheckoutButton.click();
         return new OrderPage(driver);
     }

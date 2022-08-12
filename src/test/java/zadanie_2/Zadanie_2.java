@@ -37,8 +37,8 @@ public class Zadanie_2 {
         }
     }
 
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
-    }
+//    @AfterEach
+//    public void tearDown() {
+//        driver.quit();
+//    }
 }

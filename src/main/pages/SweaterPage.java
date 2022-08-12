@@ -30,8 +30,8 @@ public class SweaterPage {
         WebElement addToCartButton = driver.findElement(By.xpath("//button[@data-button-action='add-to-cart']"));
         addToCartButton.click();
         WebElement firstResult = new WebDriverWait(driver, Duration.ofSeconds(3))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"blockcart-modal\"]/div/div/div[2]/div/div[2]/div/div/a")));
-        WebElement goToCartButton = driver.findElement(By.xpath("//*[@id=\"blockcart-modal\"]/div/div/div[2]/div/div[2]/div/div/a"));
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='btn btn-primary']")));
+        WebElement goToCartButton = driver.findElement(By.xpath("//a[@class='btn btn-primary']"));
         goToCartButton.click();
         return new CartPage(driver);
     }

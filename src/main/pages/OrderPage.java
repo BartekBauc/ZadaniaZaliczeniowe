@@ -20,7 +20,7 @@ public class OrderPage {
         payment.click();
         WebElement conditions = driver.findElement(By.name("conditions_to_approve[terms-and-conditions]"));
         conditions.click();
-        WebElement orderButton = driver.findElement(By.xpath("//*[@id=\"payment-confirmation\"]/div[1]/button"));
+        WebElement orderButton = driver.findElement(By.xpath("//button[@class='btn btn-primary center-block']"));
         orderButton.click();
         return new OrderConfirmationPage(driver);
     }

@@ -1,12 +1,12 @@
 Feature: Zadanie1
 
-  Scenario Outline: log in and fill addressfields
+  Scenario Outline: The user logs in and adds a delivery address.
 
-    Given niezalogowany uzytkownik jest na stronie glownej
-    When kliknie w SignIn
-    And zaloguje sie
-    And doda adres <alias> <address> <city> <zipcode> <country> <phone>
-    Then adres jest poprawnie dodany
+    Given that the unloged user is on the home page.
+    When clicks "SignIn" button
+    And logs in
+    And adds a new address <alias> <address> <city> <zipcode> <country> <phone>
+    Then the user confirms the successful addition of the address
     Examples:
       | alias    | address         | city   | zipcode | country | phone     |
       | UserUser | BakerStreet221B | London | NW16XE  | U       | 123456789 |

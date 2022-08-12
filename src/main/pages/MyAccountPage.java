@@ -20,7 +20,7 @@ public class MyAccountPage {
 
     public ResultsPage searchProduct(){
         WebElement searchInput = driver.findElement(By.name("s"));
-        searchInput.sendKeys(" Hummingbird Printed Sweater");
+        searchInput.sendKeys("Hummingbird Printed Sweater");
         searchInput.submit();
         return new ResultsPage(driver);
     }

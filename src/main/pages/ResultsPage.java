@@ -13,7 +13,7 @@ public class ResultsPage {
     }
 
     public SweaterPage productPageOpen() {
-        WebElement hummingbirdPrintedSweater = driver.findElement(By.xpath("//*[@id=\"js-product-list\"]/div[1]/article[1]/div/div[1]/h2/a"));
+        WebElement hummingbirdPrintedSweater = driver.findElement(By.xpath("//img[@alt='Brown bear printed sweater']"));
         hummingbirdPrintedSweater.click();
         return new SweaterPage(driver);
 

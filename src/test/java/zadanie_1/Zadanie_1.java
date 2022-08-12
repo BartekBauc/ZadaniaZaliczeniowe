@@ -23,7 +23,7 @@ public class Zadanie_1 {
     private AddressesPage addressesPage;
     private NewAddressPage newAddressPage;
 
-    @Given("niezalogowany uzytkownik jest na stronie glownej")
+    @Given("that the unloged user is on the home page.")
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
         driver = new ChromeDriver();
@@ -32,24 +32,24 @@ public class Zadanie_1 {
         homePage.openPage();
     }
 
-    @When("kliknie w SignIn")
+    @When("clicks \"SignIn\" button")
     public void clickSignIn() {
         loginPage = homePage.clickSignInButton();
     }
 
-    @And("zaloguje sie")
+    @And("logs in")
     public void logIn() {
         myAccountPage = loginPage.login();
     }
 
-    @And("^doda adres (.*) (.*) (.*) (.*) (.*) (.*)")
+    @And("^adds a new address (.*) (.*) (.*) (.*) (.*) (.*)")
     public void fillForm(String alias, String address, String city, String zipcode, String country, String phone) {
         addressesPage = myAccountPage.clickAddressesButton();
         newAddressPage = addressesPage.clickCreateNewAddressButton();
         addressesPage = newAddressPage.fillAddressForm(alias, address, city, zipcode, country, phone);
     }
 
-    @Then("adres jest poprawnie dodany")
+    @Then("the user confirms the successful addition of the address")
     public void verification() {
         Assertions.assertThat(addressesPage.newaddressverification()).isEqualTo(EXPECTED_TEXT);
         driver.quit();
