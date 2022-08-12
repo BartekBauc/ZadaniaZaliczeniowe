@@ -2,7 +2,7 @@ Feature: Zadanie1
 
   Scenario Outline: The user logs in and adds a delivery address.
 
-    Given that the unloged user is on the home page.
+    Given that the unlogged user is on the home page.
     When clicks "SignIn" button
     And logs in
     And adds a new address <alias> <address> <city> <zipcode> <country> <phone>

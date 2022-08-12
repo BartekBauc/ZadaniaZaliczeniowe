@@ -23,7 +23,7 @@ public class Zadanie_1 {
     private AddressesPage addressesPage;
     private NewAddressPage newAddressPage;
 
-    @Given("that the unloged user is on the home page.")
+    @Given("that the unlogged user is on the home page.")
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
         driver = new ChromeDriver();
