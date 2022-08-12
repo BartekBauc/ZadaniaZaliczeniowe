@@ -6,7 +6,7 @@ Feature: Zadanie1
     When clicks "SignIn" button
     And logs in
     And adds a new address <alias> <address> <city> <zipcode> <country> <phone>
-    Then the user confirms the successful addition of the address
+    Then confirmation that the address has been added correctly.
     Examples:
       | alias    | address         | city   | zipcode | country | phone     |
       | UserUser | BakerStreet221B | London | NW16XE  | U       | 123456789 |

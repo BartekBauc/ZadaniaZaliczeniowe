@@ -49,7 +49,7 @@ public class Zadanie_1 {
         addressesPage = newAddressPage.fillAddressForm(alias, address, city, zipcode, country, phone);
     }
 
-    @Then("the user confirms the successful addition of the address")
+    @Then("confirmation that the address has been added correctly.")
     public void verification() {
         Assertions.assertThat(addressesPage.newaddressverification()).isEqualTo(EXPECTED_TEXT);
         driver.quit();
